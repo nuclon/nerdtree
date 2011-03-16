@@ -27,6 +27,15 @@ let loaded_nerd_tree = 1
 let s:old_cpo = &cpo
 set cpo&vim
 
+"use this variable to open newtab with nerdtree loaded
+if !exists("g:NERDTreeNewTabWithTree")
+    let g:NERDTreeNewTabWithTree=0
+else
+    if g:NERDTreeNewTabWithTree
+        cab tabnew tabnew +NERDTreeMirror
+    end
+endif
+
 "Function: s:initVariable() function {{{2
 "This function is used to initialise a given variable to a given value. The
 "variable is only initialised if it does not exist prior
@@ -3922,6 +3931,10 @@ function! s:openInNewTab(stayCurrentTab)
 
     if target != {}
         call target.openInNewTab({'stayInCurrentTab': a:stayCurrentTab})
+    endif
+    if g:NERDTreeNewTabWithTree
+        NERDTreeMirror
+        execute "normal \<c-w>w"
     endif
 endfunction
 

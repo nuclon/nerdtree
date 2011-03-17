@@ -642,6 +642,9 @@ NERD tree. These options should be set in your vimrc.
 |'NERDTreeWinSize'|             Sets the window size when the NERD tree is
                                 opened.
 
+|'NERDTreeNewTabTree'|			If setted, while open new tab load the 
+								*NERDTreeMirror*
+
 ------------------------------------------------------------------------------
 3.2. Customisation details                             *NERDTreeOptionDetails*
 
@@ -920,6 +923,14 @@ Values: a positive integer.
 Default: 31.
 
 This option is used to change the size of the NERD tree when it is loaded.
+
+------------------------------------------------------------------------------
+                                                           *'NERDTreeNewTabTree'*
+Values: 0 or 1
+Default: 0.
+
+When this variable is setted while open a new tab, from NERDTree or not, will
+load the NERDTreeMirror.
 
 ==============================================================================
 4. The NERD tree API                                             *NERDTreeAPI*
